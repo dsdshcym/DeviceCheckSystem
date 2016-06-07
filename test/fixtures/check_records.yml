@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-06-07
+  time_usage: 2016-06-07 09:32:23
+  note: MyString
+  device_plan_id: 
+  engineer_id: 
+
+two:
+  date: 2016-06-07
+  time_usage: 2016-06-07 09:32:23
+  note: MyString
+  device_plan_id: 
+  engineer_id: 

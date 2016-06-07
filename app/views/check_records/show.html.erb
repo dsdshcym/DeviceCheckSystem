@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @check_record.date %>
+</p>
+
+<p>
+  <strong>Time usage:</strong>
+  <%= @check_record.time_usage %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @check_record.note %>
+</p>
+
+<p>
+  <strong>Device plan:</strong>
+  <%= @check_record.device_plan %>
+</p>
+
+<p>
+  <strong>Engineer:</strong>
+  <%= @check_record.engineer %>
+</p>
+
+<%= link_to 'Edit', edit_check_record_path(@check_record) %> |
+<%= link_to 'Back', check_records_path %>

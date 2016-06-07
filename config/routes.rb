@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :check_records
   resources :engineers
   resources :device_plans
   resources :check_plans
