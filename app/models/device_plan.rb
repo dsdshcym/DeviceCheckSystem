@@ -5,5 +5,5 @@ class DevicePlan < ActiveRecord::Base
   validates :scheduled_date, uniqueness: {
               scope: [:device_id,
                       :check_plan_id]
-            }
+            }, on: :create
 end
