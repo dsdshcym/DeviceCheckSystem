@@ -7,6 +7,17 @@ class DevicePlansController < ApplicationController
     @device_plans = DevicePlan.all
   end
 
+  # GET /device_plans/query/10
+  # GET /device_plans/query/10.json
+  def query
+    span = params[:span].to_i
+    @device_plans = DevicePlan.where(scheduled_date: (Date.today)..(Date.today+span.days))
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render :index }
+    end
+  end
+
   # GET /device_plans/1
   # GET /device_plans/1.json
   def show
