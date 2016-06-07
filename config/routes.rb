@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   post 'devices/:id/generate', to: 'devices#generate', as: 'generate'
 
-  get 'device_plans/query/:span', to: 'device_plans#query', constraints: { span: /\d+/ }
+  get 'device_plans/query/:span', to: 'device_plans#query', constraints: { span: /\d+/ }, as: 'query_device_plan'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
