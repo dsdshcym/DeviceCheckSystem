@@ -46,4 +46,12 @@ class DevicesControllerTest < ActionController::TestCase
 
     assert_redirected_to devices_path
   end
+
+  test "should generate device plans" do
+    check_plans = @device.check_plans
+    plans_to_add = check_plans.map { |p| 365 / p.interval }.inject(&:+)
+    assert_difference('DevicePlan.count', plans_to_add) do
+      post :generate, id: @device
+    end
+  end
 end
