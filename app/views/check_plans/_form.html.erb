@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :device_type_id %><br>
-    <%= f.text_field :device_type_id %>
+    <%= f.collection_select :device_type_id, DeviceType.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
