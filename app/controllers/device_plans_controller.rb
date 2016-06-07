@@ -11,7 +11,8 @@ class DevicePlansController < ApplicationController
   # GET /device_plans/query/10.json
   def query
     span = params[:span].to_i
-    @device_plans = DevicePlan.where(scheduled_date: (Date.today)..(Date.today+span.days))
+    @device_plans = DevicePlan.where(scheduled_date: (Date.today)..(Date.today+span.days),
+                                     status: "TODO")
     respond_to do |format|
       format.html { render :index }
       format.json { render :index }
