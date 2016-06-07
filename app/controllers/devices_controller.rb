@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  before_action :set_device, only: [:show, :edit, :update, :destroy]
+  before_action :set_device, only: [:show, :edit, :update, :destroy, :generate]
 
   # GET /devices
   # GET /devices.json
@@ -58,6 +58,36 @@ class DevicesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to devices_url, notice: 'Device was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # POST /devices/1/generate
+  # POST /devices/1/generate.json
+  def generate
+    # TODO: Do not insert duplicated device plans
+    check_plans = @device.check_plans
+    plans_to_add = []
+    check_plans.each do |check_plan|
+      interval = check_plan.interval
+      check_day = Date.today + interval.days
+      last_day = Date.today + 1.year
+      while check_day <= last_day
+        plans_to_add << {
+          scheduled_date: check_day,
+          status: "TODO",
+          device: @device,
+          check_plan: check_plan
+        }
+        check_day += interval.days
+      end
+    end
+    DevicePlan.create(plans_to_add)
+    respond_to do |format|
+      format.html {
+        redirect_to @device,
+        notice: 'Device Plans in the next year were generated.'
+      }
+      format.json { render @show, status: :ok }
     end
   end
 

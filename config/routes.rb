@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :check_plans
   resources :devices
   resources :device_types
+
+  post 'devices/:id/generate' => 'devices#generate'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
