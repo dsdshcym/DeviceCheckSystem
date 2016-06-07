@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :devices
   resources :device_types
 
-  post 'devices/:id/generate' => 'devices#generate'
+  post 'devices/:id/generate', to: 'devices#generate', as: 'generate'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
