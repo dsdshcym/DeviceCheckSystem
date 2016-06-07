@@ -65,21 +65,17 @@ class DevicesController < ApplicationController
   # POST /devices/1/generate.json
   def generate
     check_plans = @device.check_plans
-    plans_to_add = []
-    check_plans.each do |check_plan|
+    plans_to_add = check_plans.map do |check_plan|
       interval = check_plan.interval
-      check_day = Date.today + interval.days
-      last_day = Date.today + 1.year
-      while check_day <= last_day
-        plans_to_add << {
-          scheduled_date: check_day,
+      ((Date.today)..(Date.today+1.year)).step(interval).to_a[1..-1].map do |scheduled_date|
+        {
+          scheduled_date: scheduled_date,
           status: "TODO",
           device: @device,
           check_plan: check_plan
         }
-        check_day += interval.days
       end
-    end
+    end.flatten
     DevicePlan.create(plans_to_add)
     respond_to do |format|
       format.html {
