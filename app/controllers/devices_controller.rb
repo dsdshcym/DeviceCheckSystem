@@ -64,7 +64,6 @@ class DevicesController < ApplicationController
   # POST /devices/1/generate
   # POST /devices/1/generate.json
   def generate
-    # TODO: Do not insert duplicated device plans
     check_plans = @device.check_plans
     plans_to_add = []
     check_plans.each do |check_plan|
