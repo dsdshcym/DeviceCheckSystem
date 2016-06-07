@@ -1,0 +1,2 @@
+module CheckPlansHelper
+end

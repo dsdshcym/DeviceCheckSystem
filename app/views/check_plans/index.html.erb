@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Check Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Interval</th>
+      <th>Remark</th>
+      <th>Device type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @check_plans.each do |check_plan| %>
+      <tr>
+        <td><%= check_plan.name %></td>
+        <td><%= check_plan.interval %></td>
+        <td><%= check_plan.remark %></td>
+        <td><%= check_plan.device_type %></td>
+        <td><%= link_to 'Show', check_plan %></td>
+        <td><%= link_to 'Edit', edit_check_plan_path(check_plan) %></td>
+        <td><%= link_to 'Destroy', check_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Check plan', new_check_plan_path %>

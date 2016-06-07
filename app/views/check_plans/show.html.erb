@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @check_plan.name %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @check_plan.interval %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @check_plan.remark %>
+</p>
+
+<p>
+  <strong>Device type:</strong>
+  <%= @check_plan.device_type %>
+</p>
+
+<%= link_to 'Edit', edit_check_plan_path(@check_plan) %> |
+<%= link_to 'Back', check_plans_path %>

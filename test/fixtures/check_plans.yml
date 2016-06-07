@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  interval: 1
+  remark: MyString
+  device_type_id: 
+
+two:
+  name: MyString
+  interval: 1
+  remark: MyString
+  device_type_id: 
