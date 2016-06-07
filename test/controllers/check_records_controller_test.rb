@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CheckRecordsControllerTest < ActionController::TestCase
   setup do
-    @check_record = check_records(:one)
+    @check_record = check_records(:big_check)
   end
 
   test "should get index" do

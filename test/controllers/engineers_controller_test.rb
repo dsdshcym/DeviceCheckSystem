@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EngineersControllerTest < ActionController::TestCase
   setup do
-    @engineer = engineers(:one)
+    @engineer = engineers(:zhang)
   end
 
   test "should get index" do

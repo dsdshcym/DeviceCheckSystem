@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DeviceTypesControllerTest < ActionController::TestCase
   setup do
-    @device_type = device_types(:one)
+    @device_type = device_types(:ac)
   end
 
   test "should get index" do

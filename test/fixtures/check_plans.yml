@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  interval: 1
-  remark: MyString
-  device_type_id: 
+big_check_plan:
+  name: Big
+  interval: 60
+  remark: Big Check Plan Remark
+  device_type: ac
 
-two:
-  name: MyString
-  interval: 1
-  remark: MyString
-  device_type_id: 
+small_check_plan:
+  name: Small
+  interval: 30
+  remark: Small Check Plan Remark
+  device_type: ac

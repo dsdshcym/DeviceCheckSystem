@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CheckPlansControllerTest < ActionController::TestCase
   setup do
-    @check_plan = check_plans(:one)
+    @check_plan = check_plans(:big_check_plan)
   end
 
   test "should get index" do

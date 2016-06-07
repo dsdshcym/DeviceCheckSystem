@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  model: MyString
-  location: MyString
-  device_type_id: 
+aux:
+  name: Aux AC
+  model: A9001
+  location: Z2101
+  device_type: ac
 
-two:
-  name: MyString
-  model: MyString
-  location: MyString
-  device_type_id: 
+midea:
+  name: Midea AC
+  model: A9002
+  location: Z2102
+  device_type: ac

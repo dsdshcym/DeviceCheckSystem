@@ -1,15 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  date: 2016-06-07
-  time_usage: 2016-06-07 09:32:23
-  note: MyString
-  device_plan_id: 
-  engineer_id: 
 
-two:
-  date: 2016-06-07
-  time_usage: 2016-06-07 09:32:23
-  note: MyString
-  device_plan_id: 
-  engineer_id: 
+big_check:
+  date: 2015-09-01
+  time_usage: 01:00
+  note: 发动机清理
+  device_plan:
+  engineer: zhang
+
+small_check:
+  date: 2015-10-10
+  time_usage: 01:30
+  note: 换了过滤网
+  device_plan:
+  engineer: li
