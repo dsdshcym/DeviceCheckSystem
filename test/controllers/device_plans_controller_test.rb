@@ -46,4 +46,10 @@ class DevicePlansControllerTest < ActionController::TestCase
 
     assert_redirected_to device_plans_path
   end
+
+  test "should get device plans in next 10 days" do
+    get :query, span: 10
+    assert_response :success
+    assert_not_nil assigns(:device_plans)
+  end
 end
