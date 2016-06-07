@@ -16,12 +16,10 @@ class DevicePlansControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create device_plan" do
-    assert_difference('DevicePlan.count') do
+  test "should not create duplicate device_plan" do
+    assert_no_difference('DevicePlan.count') do
       post :create, device_plan: { check_plan_id: @device_plan.check_plan_id, device_id: @device_plan.device_id, scheduled_date: @device_plan.scheduled_date, status: @device_plan.status }
     end
-
-    assert_redirected_to device_plan_path(assigns(:device_plan))
   end
 
   test "should show device_plan" do
