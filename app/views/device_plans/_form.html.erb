@@ -1,0 +1,33 @@
+<%= form_for(@device_plan) do |f| %>
+  <% if @device_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@device_plan.errors.count, "error") %> prohibited this device_plan from being saved:</h2>
+
+      <ul>
+      <% @device_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scheduled_date %><br>
+    <%= f.date_select :scheduled_date %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :device_id %><br>
+    <%= f.text_field :device_id %>
+  </div>
+  <div class="field">
+    <%= f.label :check_plan_id %><br>
+    <%= f.text_field :check_plan_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

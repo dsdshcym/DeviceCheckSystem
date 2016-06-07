@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Device Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scheduled date</th>
+      <th>Status</th>
+      <th>Device</th>
+      <th>Check plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @device_plans.each do |device_plan| %>
+      <tr>
+        <td><%= device_plan.scheduled_date %></td>
+        <td><%= device_plan.status %></td>
+        <td><%= device_plan.device %></td>
+        <td><%= device_plan.check_plan %></td>
+        <td><%= link_to 'Show', device_plan %></td>
+        <td><%= link_to 'Edit', edit_device_plan_path(device_plan) %></td>
+        <td><%= link_to 'Destroy', device_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device plan', new_device_plan_path %>
