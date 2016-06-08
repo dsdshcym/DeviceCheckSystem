@@ -20,6 +20,7 @@
   <%= @device_plan.check_plan %>
 </p>
 
+<%= link_to 'Done', device_plan_path(@device_plan, device_plan: { status: "DONE" } ), method: :put %>
 <%= link_to 'Check', new_check_record_path(device_plan: @device_plan) %>
 <%= link_to 'Edit', edit_device_plan_path(@device_plan) %> |
 <%= link_to 'Back', device_plans_path %>
