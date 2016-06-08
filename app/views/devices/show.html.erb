@@ -20,6 +20,6 @@
   <%= @device.device_type %>
 </p>
 
-<%= link_to 'Generate Device Plans', generate_path(@device), method: :post %> |
+<%= link_to 'Generate Device Plans', generate_path(@device, span: 365), method: :post %> |
 <%= link_to 'Edit', edit_device_path(@device) %> |
 <%= link_to 'Back', devices_path %>
