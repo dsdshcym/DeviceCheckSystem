@@ -24,10 +24,6 @@
     <%= f.text_field :note %>
   </div>
   <div class="field">
-    <%= f.label :device_plan_id %><br>
-    <%= f.text_field :device_plan_id %>
-  </div>
-  <div class="field">
     <%= f.label :engineer_id %><br>
     <%= f.collection_select :engineer_id, Engineer.all, :id, :name %>
   </div>

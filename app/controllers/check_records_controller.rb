@@ -14,7 +14,7 @@ class CheckRecordsController < ApplicationController
 
   # GET /check_records/new
   def new
-    @check_record = CheckRecord.new
+    @check_record = CheckRecord.new(device_plan_id: params[:device_plan])
   end
 
   # GET /check_records/1/edit
