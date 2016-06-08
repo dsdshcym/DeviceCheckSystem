@@ -64,10 +64,11 @@ class DevicesController < ApplicationController
   # POST /devices/1/generate
   # POST /devices/1/generate.json
   def generate
+    span = params[:span].to_i
     check_plans = @device.check_plans
     plans_to_add = check_plans.map do |check_plan|
       interval = check_plan.interval
-      ((Date.today)..(Date.today+1.year)).step(interval).to_a[1..-1].map do |scheduled_date|
+      ((Date.today)..(Date.today+span.days)).step(interval).to_a[1..-1].map do |scheduled_date|
         {
           scheduled_date: scheduled_date,
           status: "TODO",
