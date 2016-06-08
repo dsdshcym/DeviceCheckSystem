@@ -6,4 +6,11 @@ class DevicePlan < ActiveRecord::Base
               scope: [:device_id,
                       :check_plan_id]
             }, on: :create
+
+  scope :next_n_days, lambda { |days|
+    where(
+      scheduled_date:(Date.today)..(Date.today+days.days),
+      status: "TODO"
+    )
+  }
 end
