@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  scheduled_date: 2016-06-07
-  status: MyString
+  scheduled_date: 2016-06-20
+  status: TODO
   device_id: 
   check_plan_id: 
 
 two:
-  scheduled_date: 2016-06-07
-  status: MyString
+  scheduled_date: 2016-06-20
+  status: TODO
   device_id: 
   check_plan_id: 
