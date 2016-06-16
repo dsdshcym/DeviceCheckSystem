@@ -1,0 +1,95 @@
+* 设备保养计划系统
+** 运行方式
+*** Rails
+    1. Check out http://installrails.com/
+    2. Install rails
+    3. Run ~bundle install~
+    4. Run tests
+       #+BEGIN_SRC sh
+         rake test
+       #+END_SRC
+    5. Start server
+       #+BEGIN_SRC sh
+         rails server
+       #+END_SRC
+*** Docker
+    1. Check out https://docs.docker.com/engine/installation/
+    2. Install docker and docker-compose, which are contained in docker-toolbox
+    3. Run tests
+       #+BEGIN_SRC sh
+         docker-compose run web rake test
+       #+END_SRC
+    4. Start server
+       #+BEGIN_SRC sh
+         docker-compose up
+       #+END_SRC
+** 测试结果
+   #+ATTR_HTML: :width 50%
+   [[./readme_img/tests.png]]
+   - 总共 44 项测试，79 个 assertion，包括
+     - 对各个 Model CRUD 的测试
+     - 展示  10 天内计划的测试
+     - 生成 1 年内计划的测试
+** 有待改进
+   - 设备计划的 Status 在本项目中用的是 String 类型实现，但将 Status 抽象为一个
+     单独的类可能更好
+     - 加入新的 Status 更加方便
+     - 更容易控制 Status 的 Todo 和 Done 的状态
+     - 更方便按 TODO 和 DONE 查询计划
+** Demo
+*** 设备
+    其他 Model 的界面与设备的类似，如无特别之处不另加介绍
+**** 设备列表
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/devices.index.png]]
+
+     - Index 界面，包括
+       - 所有设备的信息
+       - 设备、创建、编辑、删除的入口
+**** 设备细节
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/devices.show.png]]
+
+     - 设备细节界面，包括
+       - 该设备的细节
+       - 生成该设备检修计划及编辑的入口
+**** 新建设备
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/devices.new.png]]
+**** 编辑设备
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/devices.edit.png]]
+*** 设备种类
+    与设备的情况类似，介绍省略
+**** 设备种类列表
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/device_types.index.png]]
+*** 检修计划
+**** 计划列表
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/check_plans.index.png]]
+*** 设备对应计划
+**** 计划列表
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/device_plans.index.png]]
+
+     - 包括
+       - Plans in Next 10 Days :: 生成接下来 10 天计划的入口
+**** 计划细节
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/device_plans.show.png]]
+
+     - 包括
+       - Done :: 将当前计划的 status 设为 DONE
+       - Check :: 为当前计划添加检修记录
+**** 10 天内计划
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/device_plans.next_10_days.png]]
+     - 显示 10 天内的计划
+*** 检修记录
+**** 记录列表
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/check_records.index.png]]
+**** 新建记录
+     #+ATTR_HTML: :width 50%
+     [[./readme_img/check_records.new.png]]
